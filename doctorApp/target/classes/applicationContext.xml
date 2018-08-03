@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<!-- For Database Connection -->
+	
+  <bean id="mydbconnection" class="io.doctorApp.doc.DatabaseConnection">
+  <constructor-arg value="jdbc:mysql://localhost:3306/subscriptiondb?zeroDateTimeBehavior=convertToNull"></constructor-arg>
+  <constructor-arg value="root"></constructor-arg>
+  <constructor-arg value="saurabh"></constructor-arg>
+  </bean>
+  
+  
+  <!-- For Email Sending Userid and Password -->
+  
+  <bean id="myEmailUserAndPassword" class="io.doctorApp.doc.GMailsender">
+  <constructor-arg value="saurabh@iratechnologies.com"></constructor-arg>
+  <constructor-arg value="9956118545"></constructor-arg>
+  </bean>
+  
+ 
+  
+  <bean id="myPath" class="io.doctorApp.doc.PathConfig">
+  		<property name="path" value="H:\\tomcat 8.0\\webapps\\DoctorStudio\\PatientProfilesImages">
+  		</property>
+  		
+  		<!-- Path for save pdf -->
+  		<property name="pdfPath" value="H:\\tomcat 8.0\\webapps\\DoctorStudio\\PatientPdf"></property>
+  		
+  		
+  		<!-- Path for save Notes -->
+  		<property name="notesPath" value="H:\\tomcat 8.0\\webapps\\DoctorStudio\\PatientNotes"></property>
+  		
+  		<!-- for logo path -->
+  		<property name="logoPath" value="H:\\tomcat 8.0\\webapps\\DoctorStudio\\images"></property>
+  		
+  		<!-- Path for OTP -->
+  		<property name="otpPath" value="H:\\tomcat 8.0\\webapps\\DoctorStudio\\OTP\\"></property>
+  		
+  		<!-- For server path -->
+  		<!-- <property name="path" value="C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\DoctorStudio\\PatientProfilesImages">
+  		</property> -->
+  </bean>
+  
+  
+  
+  
+</beans>
